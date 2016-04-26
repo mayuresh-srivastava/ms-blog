@@ -1,0 +1,20 @@
+<h1>Say#hello</h1>
+<p>Find me in app/views/say/hello.html.erb</p>
+
+Hello Mayuresh!
+<br />
+<%= 2+2 %>
+<br />
+<% 3.times do %>
+ <%= @var %>
+<% end %>
+
+<%= form_for :user do |f| %>
+<p> Your Name: <br />  <%= f.text_field :name %></p>
+<p>  Login ID:<br /><%= f.text_field :login %></p>
+<p>  Password: <br />  <%= f.text_field :password %></p>
+<p>  Email:<br /> <%= f.text_field :email %></p>
+<p><%= submit_tag "Create Account" %></p>
+<% end %>
+
+<%= link_to "Say Goodbye", say_goodbye_path %>
