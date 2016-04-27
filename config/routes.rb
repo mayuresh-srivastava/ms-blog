@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   get 'about_us' => 'page#about_us'
 
-  get 'contact_us' => 'page#contact_us'
+ # get 'contact_us' => 'page#contact_us'
+ # post 'contact_us' => 'page#contact_us'
+
+  match "contact_us" => 'page#contact_us', :via => [:post, :get] 
 
   get 'products' => 'page#products'
 
@@ -18,7 +21,7 @@ Rails.application.routes.draw do
   get 'articles' => 'page#articles'
 
   get 'login' => 'page#login'
-
+  
   get 'say/hello' #=> 'say#hello'
   get 'say/goodbye'
   # The priority is based upon order of creation: first created -> highest priority.

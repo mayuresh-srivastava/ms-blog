@@ -21,6 +21,6 @@
 	</nav><!-- end of top nav -->
 	
 	<% if user_signed_in? %>
-	   Welcome <%= current_user.email %><br/> 
+	   Welcome <strong><%= current_user.email %></strong> 
 	<% end %>    
 	

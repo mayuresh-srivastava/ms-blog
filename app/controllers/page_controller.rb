@@ -6,6 +6,24 @@ class PageController < ApplicationController
   end
 
   def contact_us
+    
+    @submitted = params["commit"]
+    @name = params["name"]
+    @form_error = false
+    
+    if @name == ""
+      @error_msg = "Something went wrong."
+      @form_error = true
+    end 
+    
+    @email = params["email"]
+    @question = params["question"]
+    @newsletter = params["newsletter"] == "newsletter"
+    @gender = params["gender"]
+    @male = "gender == male" #true or false
+    @female = "gender == female" #true or false
+    @product = params["product"]
+    
   end
 
   def products
@@ -25,4 +43,5 @@ class PageController < ApplicationController
 
   def login
   end
+  
 end
