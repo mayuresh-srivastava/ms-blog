@@ -1,12 +1,31 @@
 Rails.application.routes.draw do
 
-  get 'say/hello'
+  devise_for :users
+  get 'home' => 'page#home'
+
+  get 'about_us' => 'page#about_us'
+
+  get 'contact_us' => 'page#contact_us'
+
+  get 'products' => 'page#products'
+
+  get 'newsletter' => 'page#newsletter'
+
+  get 'blog' => 'page#blog'
+
+  get 'calender' => 'page#calender'
+
+  get 'articles' => 'page#articles'
+
+  get 'login' => 'page#login'
+
+  get 'say/hello' #=> 'say#hello'
   get 'say/goodbye'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'page#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

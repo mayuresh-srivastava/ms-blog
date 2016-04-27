@@ -1,0 +1,14 @@
+<%#= form_for :user do |f| %>
+<p> Your Name: <br />  <%#= f.text_field :name %></p>
+<p>  Login ID:<br /><%#= f.text_field :login %></p>
+<p>  Password: <br />  <%#= f.text_field :password %></p>
+<p>  Email:<br /> <%#= f.text_field :email %></p>
+<p><%#= submit_tag "Create Account" %></p>
+<#% end %>
+
+
+    @user = User.new(params[:user])
+             if(request.post? and @user.save)
+                   flash[:notice] = “Account Created Successfully”
+                   redirect_to :controller => ‘yourloginsuccessfullycontrollername’
+             end
