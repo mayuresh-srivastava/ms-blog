@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'newsletter' => 'page#newsletter'
 
-  get 'blog' => 'page#blog'
+  get 'blogs' => 'page#blog'
 
   get 'calender' => 'page#calender'
 
