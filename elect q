@@ -1,0 +1,12 @@
+                List of relations
+ Schema |       Name        |   Type   |  Owner  
+--------+-------------------+----------+---------
+ public | contact_us        | table    | ms_user
+ public | contact_us_id_seq | sequence | ms_user
+ public | products          | table    | ms_user
+ public | products_id_seq   | sequence | ms_user
+ public | schema_migrations | table    | ms_user
+ public | users             | table    | ms_user
+ public | users_id_seq      | sequence | ms_user
+(7 rows)
+

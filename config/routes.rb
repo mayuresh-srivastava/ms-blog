@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :products
+  get 'people/index'
+
   devise_for :users
   get 'home' => 'page#home'
 
-  get 'about_us' => 'page#about_us'
+  get 'about_us' => 'people#index'
 
  # get 'contact_us' => 'page#contact_us'
  # post 'contact_us' => 'page#contact_us'
@@ -76,6 +79,5 @@ Rails.application.routes.draw do
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  #     #   end
 end

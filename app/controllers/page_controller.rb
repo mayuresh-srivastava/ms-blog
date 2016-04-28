@@ -12,7 +12,7 @@ class PageController < ApplicationController
     @form_error = false
     
     if @name == ""
-      @error_msg = "Something went wrong."
+      flash.now['error'] = "Must enter your name!"
       @form_error = true
     end 
     

@@ -1,12 +1,16 @@
 <h1>Contact Us</h1>
 
+<% if flash['error'] %>
+    <div class='error'><%= flash['error'] %></div>
+<% end %>
+
 <% if !@submitted || @form_error %>
-<%= @error_msg %><br />
+<!--<%#= @error_msg %><br /> -->
 
 <%= form_for contact_us_path, :method => "POST" do %>
 
   <%= label_tag :name, "Enter your Full Name:" %>
-  <%= text_field_tag :name, @name, :autofocus => "autofocus", :required => "true", :placeholder => "Enter your name" %><br />
+  <%= text_field_tag :name, @name, :autofocus => "autofocus", :placeholder => "Enter your name" %><br />
   
   <%= label_tag :email, "Enter your Email Address:" %>
   <%= email_field_tag :email, @email, :placeholder => "something@example.com" %><br />
@@ -25,9 +29,9 @@
   
   <%= select_tag :product, options_for_select(
                                             [ 
-                                             ['Skis', 0], 
-                                             ['Poles', 1], 
-                                             ['Boots', 2],
+                                             ['abc', 0], 
+                                             ['def', 1], 
+                                             ['ghi', 2],
                                             ], @product) %> 
   <br />
   <%= submit_tag "Ask Question" %> 

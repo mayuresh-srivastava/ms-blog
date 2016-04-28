@@ -1,0 +1,27 @@
+mayureshmayur:~/workspace (master) $ rails g model People first_name:string last_name:string age:integer hair_color:string                     
+Running via Spring preloader in process 17621
+[WARNING] The model name 'People' was recognized as a plural, using the singular 'Person' instead. Override with --force-plural or setup custom inflection rules for this noun before running the generator.
+      invoke  active_record
+      create    db/migrate/20160427183111_create_people.rb
+      create    app/models/person.rb
+      invoke    test_unit
+      create      test/models/person_test.rb
+      create      test/fixtures/people.yml
+mayureshmayur:~/workspace (master) $ rails destroy model People
+Running via Spring preloader in process 17652
+[WARNING] The model name 'People' was recognized as a plural, using the singular 'Person' instead. Override with --force-plural or setup custom inflection rules for this noun before running the generator.
+      invoke  active_record
+      remove    db/migrate/20160427183111_create_people.rb
+      remove    app/models/person.rb
+      invoke    test_unit
+      remove      test/models/person_test.rb
+      remove      test/fixtures/people.yml
+mayureshmayur:~/workspace (master) $ rails g model People --force-plural first_name:string last_name:string age:integer hair_color:string       
+Running via Spring preloader in process 17664
+      invoke  active_record
+      create    db/migrate/20160427183730_create_people.rb
+      create    app/models/people.rb
+      invoke    test_unit
+      create      test/models/people_test.rb
+      create      test/fixtures/people.yml
+mayureshmayur:~/workspace (master) $ 
