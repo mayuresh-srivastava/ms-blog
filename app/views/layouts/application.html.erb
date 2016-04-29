@@ -2,7 +2,10 @@
 <html lang="en">
 <head> 
   <meta charset="utf-8" />
-  <title>Workspace</title>
+  
+  <!--  <title>Workspace</title>
+  <title><%#= yield(:title) %> | Sample App</title> -->
+  <title><%= full_title(yield(:title)) %></title>
   
 <!--  <link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="print.css" media="print" />
@@ -29,13 +32,13 @@
 <%= render :partial => 'shared/nav' %>
 
 	<section id="main"> <!-- #main content and sidebar area -->
-		<section id="container">  <!-- #container -->
+<!--		<section id="container">--> <!-- #container -->
 			<section id="content">  <!-- #content -->
 			
 <%= yield %>
 
  </section> <!-- end of #content -->
-		</section> <!-- end of #container -->
+	<!--	</section>  --><!-- end of #container -->
        
 <!--		<aside id="sidebar"> --><!-- sidebar -->
 		       <!--

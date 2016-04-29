@@ -13,15 +13,15 @@ images = %w(skis.jpg lappi.jpg boots.jpg poles.jpg)
 
 #Movie.destroy_all
 
-3.times do
+50.times do
   
 products = Product.create( :name => "#{App.name}", 
                            :price => rand(100..200), 
                            :description => Lorem.paragraphs.join, 
                            :cost => rand(32..100), 
                            :quantity => rand(11..100), 
-                           #:image => "#{Avatar.image}", 
-                           :image => "products/" + images[rand(images.length)],
+                           :image => "#{Avatar.image}", 
+                           #:image => "products/" + images[rand(images.length)],
                            :weight => rand(5..50) 
                           )
 

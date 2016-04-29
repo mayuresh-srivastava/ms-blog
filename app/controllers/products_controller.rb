@@ -1,10 +1,19 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate, except: [ :index, :show ]
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    
+    #@page = params['page'].to_i
+    #@prev_page = @page - 1 unless @page == 0
+    #@next_page = @page + 1 unless @page*5 > Product.count
+    #@products = Product.limit(5).offset(@page * 5).order(:updated_at => :desc)
+    
+    @page = params['page']
+    @products = Product.page(@page).order(:updated_at => :desc)
+    
   end
 
   # GET /products/1
@@ -62,6 +71,11 @@ class ProductsController < ApplicationController
   end
 
   private
+  
+    def authenticate
+      authenticate_user! && current_user.try(:admin?)
+    end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])

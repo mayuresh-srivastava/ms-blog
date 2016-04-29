@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :products
+  resources :products do
+   get 'page/:page', :action => :index, :on => :collection
+  end 
+  
   get 'people/index'
 
   devise_for :users
