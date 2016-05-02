@@ -53,4 +53,5 @@ production:
   port: 5432
   username: udykwcsldxcbvo
   password: bDGwY2y3qXz61XHmP3WPZs2GI4
+  url: postgres://udykwcsldxcbvo:bDGwY2y3qXz61XHmP3WPZs2GI4@ec2-54-163-227-196.compute-1.amazonaws.com:5432/d4sd12tqh5m0rc
   
