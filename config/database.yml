@@ -45,11 +45,11 @@ development:
   # username: rubyuser
   # password: vintage
  
-#production:
- #  adapter: postgresql
-  # encoding: unicode
-  # database: library_production 
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: d4sd12tqh5m0rc 
   # host: localhost
-  # username: rubyuser
-  # password: vintage
+  username: udykwcsldxcbvo
+  password: bDGwY2y3qXz61XHmP3WPZs2GI4
   
