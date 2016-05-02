@@ -1,7 +1,22 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :mail, :spam ]
   before_filter :authenticate, except: [ :index, :show ]
 
+  def mail # mail_product_path
+    UserMailer.newsletter(@product, current_user).deliver
+    redirect_to @product, notice: 'Email sent.'
+  end  
+  
+  def spam # spam_product_path
+      # Get all of the users 
+      # Loop through and send an email to each one
+      users = User.all #where(:newsletter => true)
+      users.each do |user|
+         UserMailer.newsletter(@product, user).deliver
+      end
+    redirect_to products_path, notice: 'Email sent.'
+  end  
+  
   # GET /products
   # GET /products.json
   def index
@@ -11,14 +26,14 @@ class ProductsController < ApplicationController
     #@next_page = @page + 1 unless @page*5 > Product.count
     #@products = Product.limit(5).offset(@page * 5).order(:updated_at => :desc)
     
-    @page = params['page']
-    @products = Product.page(@page).order(:updated_at => :desc)
+    @products = Product.page(params['page']).order(:updated_at => :desc)
     
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /products/new

@@ -4,7 +4,8 @@
 				<li><%= link_to "Home", home_path %></li>
 				<li><%= link_to "About Us", people_index_path %></li>
 				<li><%= link_to "Products", products_path %></li>
-				<li><%= link_to "Calendar", calender_path %></li>
+				<li><%= link_to "Calendar", calendar_path %></li>
+				                         <!--calender_path--> 
 				<li><%= link_to "Articles", articles_path %></li>
 				<li><%= link_to "Blog", blogs_path %></li>
 				
@@ -21,6 +22,7 @@
 	</nav><!-- end of top nav -->
 	
 	<% if user_signed_in? %>
-	   Welcome <strong><%= current_user.email %></strong> 
+	  <!-- Welcome <strong><%= current_user.email %></strong> -->
+	   Welcome <strong><%= current_user.full_name %></strong> 
 	<% end %>    
 	

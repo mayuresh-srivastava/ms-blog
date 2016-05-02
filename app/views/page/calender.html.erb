@@ -1,2 +1,27 @@
-<h1>Page#calender</h1>
+<!--
 <p>Find me in app/views/page/calender.html.erb</p>
+-->
+<h1>Calendar</h1>
+
+<%#= @time.year %><!--&nbsp;--><%#= @time.strftime("%B") %>
+<!-- #Day of the week -->
+<!--  <a href = "mailto:mayureshmayurs@gmail.com">Email me</a>  -->
+<%#= mail_to( "mayureshmayurs@gmail.com", "Email me") %>
+<%#= day_of_week = @time.strftime("%w").to_i %>
+<%= calendar( @month, @year ).html_safe %>
+
+<!--
+<table border=1>
+  <tr></tr>
+    <td>Sun</td>
+     <td>Mon</td>
+      <td>Tue</td>
+       <td>Wed</td>
+        <td>Thu</td>
+         <td>Fri</td>
+          <td>Sat</td>
+  </tr>
+</table>
+-->
+  
+

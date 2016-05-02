@@ -1,3 +1,4 @@
+<%= tinymce %>
 <h1>Contact Us</h1>
 
 <% if flash['error'] %>
@@ -13,10 +14,10 @@
   <%= text_field_tag :name, @name, :autofocus => "autofocus", :placeholder => "Enter your name" %><br />
   
   <%= label_tag :email, "Enter your Email Address:" %>
-  <%= email_field_tag :email, @email, :placeholder => "something@example.com" %><br />
+  <%= email_field_tag :email, @email, :placeholder => "user@domain.com" %><br />
   
   <%= label_tag :question, "Enter your question:" %><br />
-  <%= text_area_tag :question, @question, :size => "50x10" %> <br />
+  <%= text_area_tag :question, @question, :size => "50x10", :class => "tinymce" %> <br />
   
   <%= check_box_tag :newsletter, @newsletter %>
   Subscribe to newsletter?

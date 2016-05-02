@@ -2,12 +2,17 @@
 <p>Find me in app/views/say/hello.html.erb</p>
 
 Hello Mayuresh!
+
 <br />
 <%= 2+2 %>
 <br />
+
 <% 3.times do %>
  <%= @var %>
+<p><%#= @now %></p> 
 <% end %>
 
-
+<div class="dave">
+  <%= link_to "Goodbye", say_goodbye_path %>
+</div>
 

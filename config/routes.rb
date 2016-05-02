@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
 
+  get "product/:id/mail" => "products#mail", :as => 'mail_product'
+  get "product/:id/spam" => "products#spam", :as => 'spam_product'
+  
   resources :products do
    get 'page/:page', :action => :index, :on => :collection
-  end 
+   resources :comments
+  # delete 'product/:id/comments/:comment_id', 
+  # :controller => :comments, :action => :destroy, :as => "destroy_comment"
+ end 
+  
   
   get 'people/index'
 
@@ -22,7 +29,8 @@ Rails.application.routes.draw do
 
   get 'blogs' => 'page#blog'
 
-  get 'calender' => 'page#calender'
+  #get 'calender' => 'page#calender' 
+  get 'calender(/:year(/:month))' => 'page#calender', :as => 'calendar'
 
   get 'articles' => 'page#articles'
 

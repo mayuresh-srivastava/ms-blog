@@ -11,7 +11,7 @@ include Faker
 
 images = %w(skis.jpg lappi.jpg boots.jpg poles.jpg)
 
-#Movie.destroy_all
+#Product.destroy_all
 
 50.times do
   
@@ -24,6 +24,16 @@ products = Product.create( :name => "#{App.name}",
                            #:image => "products/" + images[rand(images.length)],
                            :weight => rand(5..50) 
                           )
+    products.save
+    if( ! products.nil?)
+    (rand(2..5)).times do
+      products.comments.create!( :author => "#{Name.name}", 
+                               :title => "#{Company.bs}",
+                               :content => Lorem.sentences.join,
+                               :rating => rand(1..5)
+                              )
+    end  
+    end
 
 puts Product.inspect
 

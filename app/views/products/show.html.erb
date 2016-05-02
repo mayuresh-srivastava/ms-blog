@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<p> Average Rating: <%= stars( @product.comments.average(:rating).round )%></p>
+                        <!-- ((image_tag "star 1.gif") * @product.comments.average(:rating).round).html_safe -->
 <p>
   <strong>Name:</strong>
-  <%= @product.name %>
+  <%= @product.proper_name %>
 </p>
 
 <p>
@@ -34,6 +36,22 @@
   <strong>Weight:</strong>
   <%= @product.weight %>
 </p>
+<h3>Comments</h3>
+<% @product.comments.descending.each do |comment| %>
+    <h3><%= comment.title %></h3>
+    <h3> <%= time_ago_in_words(comment.created_at) %> ago, <%= comment.author %> said: </h3>
+    <p><%= comment.content %></p>
+    <p>Rating: <%= stars(comment.rating) %></p>
+               <!--((image_tag "star 1.gif") * comment.rating).html_safe -->
+    <% if is_admin? %>
+        <%= link_to "Delete Comment", product_comment_path(@product, comment), 
+                    data: {:confirm => "Are your sure?"}, :method => :delete %>
+    <% end %>    
+    <hr>
+<% end %>    
 
+<%= render :partial => 'comment_form' %>
+
+<%= link_to 'Email this product', mail_product_path( @product ) %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
