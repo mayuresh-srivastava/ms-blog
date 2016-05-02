@@ -48,6 +48,7 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
+  pool: 5
   host: ec2-54-163-227-196.compute-1.amazonaws.com
   database: d4sd12tqh5m0rc 
   port: 5432
