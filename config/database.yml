@@ -49,7 +49,7 @@ production:
   adapter: postgresql
   encoding: unicode
   database: d4sd12tqh5m0rc 
-  # host: localhost
+  host: ec2-54-163-227-196.compute-1.amazonaws.com
   username: udykwcsldxcbvo
   password: bDGwY2y3qXz61XHmP3WPZs2GI4
   
