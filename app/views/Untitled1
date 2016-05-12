@@ -1,14 +1,17 @@
-<%#= form_for :user do |f| %>
-<p> Your Name: <br />  <%#= f.text_field :name %></p>
-<p>  Login ID:<br /><%#= f.text_field :login %></p>
-<p>  Password: <br />  <%#= f.text_field :password %></p>
-<p>  Email:<br /> <%#= f.text_field :email %></p>
-<p><%#= submit_tag "Create Account" %></p>
-<#% end %>
+<%= form_for @user, :method => "POST" do %>
 
-
-    @user = User.new(params[:user])
-             if(request.post? and @user.save)
-                   flash[:notice] = “Account Created Successfully”
-                   redirect_to :controller => ‘yourloginsuccessfullycontrollername’
-             end
+  <%= label_tag :name, "Enter your Full Name:" %>
+  <%= text_field_tag :name, @name, :autofocus => "autofocus", :placeholder => "Enter your name" %><br />
+  
+  <%= label_tag :email, "Enter your Email Address:" %>
+  <%= email_field_tag :email, @email, :autofocus => "autofocus", :placeholder => "user@domain.com" %><br />
+  
+  <%= label_tag :password, "Enter your password:" %><br />
+  <%= password_field_tag :password, @question, :autofocus => "autofocus", :placeholder => "Enter your password" %> <br />
+  
+  <%= label_tag :name, "Confirm Password:" %>
+  <%= password_field_tag :confirm_password, @confirm_password, :autofocus => "autofocus", :placeholder => "Confirm the above password" %><br />
+  
+  <%= submit_tag "Ask Question" %> 
+  
+<% end %>
